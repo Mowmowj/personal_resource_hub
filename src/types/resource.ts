@@ -3,4 +3,6 @@ export interface ResourceItem {
   title: string
   url: string
   description?: string
+  tags: string[]
+  addedAt?: string
 }

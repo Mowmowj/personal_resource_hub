@@ -6,7 +6,9 @@
       type="text"
       :value="modelValue"
       placeholder="Search by title or tag"
+      aria-label="Search by title or tag"
       @input="handleInput"
+      @blur="emit('scroll-to-results')"
     />
   </label>
 </template>
@@ -18,11 +20,11 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (event: 'update:modelValue', value: string): void
+  (event: 'scroll-to-results'): void
 }>()
 
 const handleInput = (event: Event) => {
   const target = event.target as HTMLInputElement
-  // TODO: Implementing search filtering logic requires considering performance.
   emit('update:modelValue', target.value)
 }
 </script>
