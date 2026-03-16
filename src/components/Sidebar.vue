@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <p class="mb-3 text-xs uppercase tracking-[0.35em] text-dusk/50">Categories</p>
-    <ul class="space-y-2">
+  <div class="flex min-h-0 flex-col">
+    <p class="mb-3 shrink-0 text-xs uppercase tracking-[0.35em] text-dusk/50">Categories</p>
+    <!-- Scrollable category list when it overflows (e.g. many categories). -->
+    <ul class="min-h-0 space-y-2 overflow-y-auto">
       <li v-for="category in categories" :key="category">
         <button
           class="flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition"
